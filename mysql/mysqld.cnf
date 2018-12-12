@@ -1,0 +1,8 @@
+[mysqld]
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+log_error_verbosity = 2
+symbolic-links = 0
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+explicit_defaults_for_timestamp = 1
