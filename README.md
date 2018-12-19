@@ -66,9 +66,9 @@ $ sudo systemctl start docker-compose-app
 ```
 10. For correct work of web server set necessary permissions via execute the `sudo chown -R www-data:www-data /srv/www` command. Use this directory for your projects 🍾
 
-To update Docker and Docker Compose you should delete both through the following commands:
-```bash
-$ apt-get purge docker-ce
-$ rm /usr/local/bin/docker-compose
-```
-And then repeat the steps in point 5, specifying the desired version of Docker Compose. Also change `COMPOSE_API_VERSION` in the `.env` file according new API version of Docker (`docker version`).
+> **Note:** To update Docker and Docker Compose you should delete both through the following commands:
+> ```bash
+> $ apt-get purge docker-ce
+> $ rm /usr/local/bin/docker-compose
+> ```
+> And then repeat the steps in point 5, specifying the desired version of Docker Compose. Also change `COMPOSE_API_VERSION` in the `.env` file according new API version of Docker (`$ docker version`).
