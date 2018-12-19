@@ -12,6 +12,8 @@ ARG BUILD_DEPS=" \
         libmagickwand-dev \
         # Memcached dependencies
         libmemcached-dev \
+        # XSL dependencies
+        libxslt-dev \
     "
 
 # Install required libraries
@@ -55,6 +57,10 @@ RUN docker-php-ext-configure intl \
         pdo_mysql \
         pdo_pgsql \
         gd \
+        # Magento dependencies
+        bcmath \
+        soap \
+        xsl \
         # Composer dependencies
         zip \
     && pecl install \
@@ -80,8 +86,7 @@ ARG GITHUB_OAUTH_TOKEN
 ARG COMPOSER_VERSION=1.5.2
 
 # https://getcomposer.org/doc/03-cli.md#environment-variables
-ENV COMPOSER_ALLOW_SUPERUSER=1 \
-    COMPOSER_HOME=/tmp/composer
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 COPY ./composer-setup.sh /tmp/
 RUN sh /tmp/composer-setup.sh && rm /tmp/composer-setup.sh

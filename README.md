@@ -1,4 +1,4 @@
-# Docker Kit
+﻿# Docker Kit
 
 The humble kit with configuration files of Docker Compose for web development. Inside you can find the next configurations of virtual hosts:
 
@@ -47,7 +47,7 @@ $ sudo shutdown -r now
 $ curl -sSL get.docker.com -o docker-setup.sh
 $ sh docker-setup.sh
 $ rm docker-setup.sh
-$ curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+$ curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 $ chmod +x /usr/local/bin/docker-compose
 ```
 7. Clone the repository **into a directory with path `/srv/docker`**:
@@ -65,3 +65,10 @@ $ sudo systemctl enable docker-compose-app
 $ sudo systemctl start docker-compose-app
 ```
 10. For correct work of web server set necessary permissions via execute the `sudo chown -R www-data:www-data /srv/www` command. Use this directory for your projects 🍾
+
+To update Docker and Docker Compose you should delete both through the following commands:
+```bash
+$ apt-get purge docker-ce
+$ rm /usr/local/bin/docker-compose
+```
+And then repeat the steps in point 5, specifying the desired version of Docker Compose. Also change `COMPOSE_API_VERSION` in the `.env` file according new API version of Docker (`docker version`).

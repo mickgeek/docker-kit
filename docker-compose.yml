@@ -1,4 +1,4 @@
-version: "3.2"
+version: "3"
 
 services:
   postgres:
@@ -23,6 +23,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     volumes:
       - mysql-data:/var/lib/mysql
+      - ../www:/srv/www
     ports:
       - 3306:3306
     networks:
