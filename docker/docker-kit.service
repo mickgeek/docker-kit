@@ -1,0 +1,14 @@
+[Unit]
+Description=Docker Kit Service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/docker-kit/docker
+ExecStart=docker compose up --build -d
+ExecStartPre=docker system prune -f
+ExecStop=docker compose down
+
+[Install]
+WantedBy=multi-user.target
