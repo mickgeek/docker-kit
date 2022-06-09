@@ -37,6 +37,7 @@ RUN docker-php-ext-configure gd \
         intl \
         pdo_pgsql \
         opcache \
+        zip \
     && pecl install \
         imagick-${PECL_IMAGICK_VERSION} \
         apcu-${PECL_APCU_VERSION} \
