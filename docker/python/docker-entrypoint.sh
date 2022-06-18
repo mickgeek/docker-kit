@@ -3,8 +3,8 @@ set -e
 
 cd /home/py
 
-if [ "$1" = 'python3' ]; then
-    python3 -m venv ./venv
+if [ "$1" = 'python' ]; then
+    python -m venv ./venv
     source ./venv/bin/activate
 
     pip install --upgrade pip

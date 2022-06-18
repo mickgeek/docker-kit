@@ -23,20 +23,20 @@ services:
     networks:
       - web
 
-  php-fpm:
-    build:
-      context: ./php-fpm
-      args:
-        - GITHUB_OAUTH_TOKEN=${GITHUB_OAUTH_TOKEN}
-    environment:
-      - PHP_OPCACHE_ENABLE=${PHP_OPCACHE_ENABLE}
-      - PHP_XDEBUG_MODE=${PHP_XDEBUG_MODE}
-      - PHP_XDEBUG_CLIENT_HOST=${PHP_XDEBUG_CLIENT_HOST}
-      - PHP_XDEBUG_IDEKEY=${PHP_XDEBUG_IDEKEY}
-    volumes:
-      - ..:/home
-    networks:
-      - web
+  #php-fpm:
+  #  build:
+  #    context: ./php-fpm
+  #    args:
+  #      - GITHUB_OAUTH_TOKEN=${GITHUB_OAUTH_TOKEN}
+  #  environment:
+  #    - PHP_OPCACHE_ENABLE=${PHP_OPCACHE_ENABLE}
+  #    - PHP_XDEBUG_MODE=${PHP_XDEBUG_MODE}
+  #    - PHP_XDEBUG_CLIENT_HOST=${PHP_XDEBUG_CLIENT_HOST}
+  #    - PHP_XDEBUG_IDEKEY=${PHP_XDEBUG_IDEKEY}
+  #  volumes:
+  #    - ..:/home
+  #  networks:
+  #    - web
 
   #apache:
   #  build:
