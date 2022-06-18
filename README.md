@@ -40,4 +40,4 @@ To update Docker Engine and Docker Compose you should delete both, and then inst
 
 ### "Permission denied" error
 
-Use correct permissions for application directories. For PHP projects set permissions via execute the `sudo chown -R www-data:www-data /home/docker-kit/apps/php/` command. Or run the [docker-compose exec](https://docs.docker.com/compose/reference/exec/) command with the `--user` option.
+Use correct permissions for application directories. For PHP projects set permissions via execute the `sudo chown -R www-data:www-data /home/docker-kit/php/` command. Or run the [docker-compose exec](https://docs.docker.com/compose/reference/exec/) command with the `--user` option.

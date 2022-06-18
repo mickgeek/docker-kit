@@ -69,5 +69,5 @@ RUN sh /tmp/composer-setup.sh && rm /tmp/composer-setup.sh
 
 EXPOSE 9000
 
-WORKDIR /home/apps
+WORKDIR /home
 CMD ["php-fpm"]

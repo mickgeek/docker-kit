@@ -1,6 +1,5 @@
 FROM node:17-alpine
 
-EXPOSE 3000
+EXPOSE 8090
 
-WORKDIR /home/apps
-CMD ["node", "js/app.js"]
+CMD ["node", "/home/js/app.js"]
